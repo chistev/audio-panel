@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Register • StreamForge</title>
+    <meta name="description" content="Create your StreamForge account and start boosting your music streams today."/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <style>
+      body { font-family: 'Inter', sans-serif; }
+      .gradient-bg { background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%); }
+    </style>
+  </head>
+
+  <body class="bg-black text-white min-h-screen gradient-bg flex items-center justify-center px-6 py-12">
+    <div class="max-w-md w-full">
+      <!-- Logo -->
+      <div class="text-center mb-10">
+        <a href="/" class="inline-block">
+          <h1 class="text-4xl font-bold tracking-tight">
+            <span class="text-green-500">Stream</span>Forge
+          </h1>
+        </a>
+        <p class="text-gray-400 mt-3">Create your account in 30 seconds</p>
+      </div>
+
+      <!-- Registration Card -->
+      <div class="bg-gray-900/70 border border-gray-800 rounded-2xl p-8 backdrop-blur-sm">
+        <form action="/register" method="POST" class="space-y-6">
+          <!-- Full Name -->
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2">Full Name</label>
+            <input 
+              type="text" 
+              name="name" 
+              required 
+              class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:border-green-500 focus:ring-2 focus:ring-green-500/30 outline-none transition"
+              placeholder="John Doe"
+            />
+          </div>
+
+          <!-- Email -->
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2">Email Address</label>
+            <input 
+              type="email" 
+              name="email" 
+              required 
+              class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:border-green-500 focus:ring-2 focus:ring-green-500/30 outline-none transition"
+              placeholder="you@example.com"
+            />
+          </div>
+
+          <!-- Password -->
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2">Password</label>
+            <input 
+              type="password" 
+              name="password" 
+              required 
+              minlength="8"
+              class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:border-green-500 focus:ring-2 focus:ring-green-500/30 outline-none transition"
+              placeholder="••••••••"
+            />
+            <p class="text-xs text-gray-500 mt-2">Minimum 8 characters</p>
+          </div>
+
+          <!-- Confirm Password -->
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2">Confirm Password</label>
+            <input 
+              type="password" 
+              name="password_confirm" 
+              required 
+              class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:border-green-500 focus:ring-2 focus:ring-green-500/30 outline-none transition"
+              placeholder="••••••••"
+            />
+          </div>
+
+          <!-- Terms Checkbox -->
+          <div class="flex items-start gap-3">
+            <input type="checkbox" id="terms" required class="mt-1"/>
+            <label for="terms" class="text-sm text-gray-400">
+              I agree to the <a href="/terms" class="text-green-500 hover:underline">Terms of Service</a> and 
+              <a href="/privacy" class="text-green-500 hover:underline">Privacy Policy</a>
+            </label>
+          </div>
+
+          <!-- Submit Button -->
+          <button 
+            type="submit"
+            class="w-full bg-green-600 hover:bg-green-500 text-white font-bold py-4 rounded-xl transition transform hover:scale-105 shadow-lg shadow-green-600/30"
+          >
+            Create Account
+          </button>
+        </form>
+
+        <!-- Divider -->
+        <div class="my-8 flex items-center">
+          <div class="flex-1 border-t border-gray-700"></div>
+          <span class="px-4 text-gray-500 text-sm">or</span>
+          <div class="flex-1 border-t border-gray-700"></div>
+        </div>
+
+        <!-- Login Link -->
+        <div class="text-center">
+          <p class="text-gray-400">
+            Already have an account? 
+            <a href="/login" class="text-green-500 font-medium hover:underline">Log in</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Trust Note -->
+      <p class="text-center text-gray-500 text-sm mt-8">
+        Secured by 256-bit SSL • No card required to sign up
+      </p>
+    </div>
+  </body>
+</html>
