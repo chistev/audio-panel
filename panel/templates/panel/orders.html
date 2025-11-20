@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Order History • StreamForge</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .gradient-bg { background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%); }
+  </style>
+</head>
+<body class="bg-black text-white min-h-screen gradient-bg">
+
+  <!-- Navbar & Sidebar same -->
+
+  <main class="flex-1 p-8">
+    <div class="flex justify-between items-center mb-8">
+      <h1 class="text-4xl font-extrabold">Order History</h1>
+      <input type="text" placeholder="Search orders..." class="px-6 py-3 bg-gray-800/50 border border-gray-700 rounded-xl focus:border-green-500 outline-none">
+    </div>
+
+    <div class="bg-gray-900/60 border border-gray-800 rounded-2xl overflow-hidden">
+      <table class="w-full">
+        <thead class="bg-gray-800/50">
+          <tr>
+            <th class="px-6 py-4 text-left">ID</th>
+            <th class="px-6 py-4 text-left">Date</th>
+            <th class="px-6 py-4 text-left">Service</th>
+            <th class="px-6 py-4 text-left">Link</th>
+            <th class="px-6 py-4 text-left">Quantity</th>
+            <th class="px-6 py-4 text-left">Delivered</th>
+            <th class="px-6 py-4 text-left">Cost</th>
+            <th class="px-6 py-4 text-left">Status</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-800">
+          <tr class="hover:bg-gray-800/30 transition">
+            <td class="px-6 py-5">#12847</td>
+            <td class="px-6 py-5">Nov 18, 2025</td>
+            <td class="px-6 py-5">Spotify Premium</td>
+            <td class="px-6 py-5 text-green-500 truncate max-w-xs">spotify.com/track/...</td>
+            <td class="px-6 py-5">500,000</td>
+            <td class="px-6 py-5">412,819 / 500,000</td>
+            <td class="px-6 py-5">$900.00</td>
+            <td class="px-6 py-5"><span class="bg-yellow-500/20 text-yellow-500 px-3 py-1 rounded-full text-sm">In Progress</span></td>
+          </tr>
+          <!-- Repeat rows -->
+          <tr class="hover:bg-gray-800/30 transition">
+            <td class="px-6 py-5">#12711</td>
+            <td class="px-6 py-5">Nov 15, 2025</td>
+            <td class="px-6 py-5">Audiomack Plays</td>
+            <td class="px-6 py-5 text-green-500">audiomack.com/song/...</td>
+            <td class="px-6 py-5">100,000</td>
+            <td class="px-6 py-5">100,000 / 100,000</td>
+            <td class="px-6 py-5">$140.00</td>
+            <td class="px-6 py-5"><span class="bg-green-500/20 text-green-500 px-3 py-1 rounded-full text-sm">Completed</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</body>
+</html>
