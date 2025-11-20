@@ -8,3 +8,9 @@ def terms(request):
 
 def privacy(request):
     return render(request, 'accounts/privacy.html')
+
+def user_login(request):
+    return render(request, 'accounts/login.html')
+
+def password_reset(request):
+    return render(request, 'accounts/forgot_password.html')

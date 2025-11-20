@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Register • StreamForge</title>
-    <meta name="description" content="Create your StreamForge account and start boosting your music streams today."/>
+    <title>Login • StreamForge</title>
+    <meta name="description" content="Log in to your StreamForge panel and start boosting your music streams."/>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
     <style>
@@ -22,24 +22,12 @@
             <span class="text-green-500">Stream</span>Forge
           </h1>
         </a>
-        <p class="text-gray-400 mt-3">Create your account in 30 seconds</p>
+        <p class="text-gray-400 mt-3">Welcome back. Log in to your dashboard</p>
       </div>
 
-      <!-- Registration Card -->
+      <!-- Login Card -->
       <div class="bg-gray-900/70 border border-gray-800 rounded-2xl p-8 backdrop-blur-sm">
-        <form action="/register" method="POST" class="space-y-6">
-          <!-- Full Name -->
-          <div>
-            <label class="block text-sm font-medium text-gray-300 mb-2">Full Name</label>
-            <input 
-              type="text" 
-              name="name" 
-              required 
-              class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:border-green-500 focus:ring-2 focus:ring-green-500/30 outline-none transition"
-              placeholder="John Doe"
-            />
-          </div>
-
+        <form action="/login" method="POST" class="space-y-6">
           <!-- Email -->
           <div>
             <label class="block text-sm font-medium text-gray-300 mb-2">Email Address</label>
@@ -47,6 +35,7 @@
               type="email" 
               name="email" 
               required 
+              autocomplete="email"
               class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:border-green-500 focus:ring-2 focus:ring-green-500/30 outline-none transition"
               placeholder="you@example.com"
             />
@@ -59,32 +48,19 @@
               type="password" 
               name="password" 
               required 
-              minlength="8"
-              class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:border-green-500 focus:ring-2 focus:ring-green-500/30 outline-none transition"
-              placeholder="••••••••"
-            />
-            <p class="text-xs text-gray-500 mt-2">Minimum 8 characters</p>
-          </div>
-
-          <!-- Confirm Password -->
-          <div>
-            <label class="block text-sm font-medium text-gray-300 mb-2">Confirm Password</label>
-            <input 
-              type="password" 
-              name="password_confirm" 
-              required 
+              autocomplete="current-password"
               class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:border-green-500 focus:ring-2 focus:ring-green-500/30 outline-none transition"
               placeholder="••••••••"
             />
           </div>
 
-          <!-- Terms Checkbox -->
-          <div class="flex items-start gap-3">
-            <input type="checkbox" id="terms" required class="mt-1"/>
-            <label for="terms" class="text-sm text-gray-400">
-              I agree to the <a href="{% url 'terms' %}" class="text-green-500 hover:underline">Terms of Service</a> and 
-              <a href="{% url 'privacy' %}" class="text-green-500 hover:underline">Privacy Policy</a>
+          <!-- Remember + Forgot -->
+          <div class="flex items-center justify-between text-sm">
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" name="remember" class="text-green-500 focus:ring-green-500"/>
+              <span class="text-gray-400">Remember me</span>
             </label>
+            <a href="{% url 'password_reset' %}" class="text-green-500 hover:underline">Forgot password?</a>
           </div>
 
           <!-- Submit Button -->
@@ -92,7 +68,7 @@
             type="submit"
             class="w-full bg-green-600 hover:bg-green-500 text-white font-bold py-4 rounded-xl transition transform hover:scale-105 shadow-lg shadow-green-600/30"
           >
-            Create Account
+            Log In
           </button>
         </form>
 
@@ -103,18 +79,18 @@
           <div class="flex-1 border-t border-gray-700"></div>
         </div>
 
-        <!-- Login Link -->
+        <!-- Register Link -->
         <div class="text-center">
           <p class="text-gray-400">
-            Already have an account? 
-            <a href="{% url 'login' %}" class="text-green-500 font-medium hover:underline">Log in</a>
+            Don’t have an account yet? 
+            <a href="/register" class="text-green-500 font-medium hover:underline">Register now</a>
           </p>
         </div>
       </div>
 
       <!-- Trust Note -->
       <p class="text-center text-gray-500 text-sm mt-8">
-        Secured by 256-bit SSL • No card required to sign up
+        Secured by 256-bit SSL • Protected by Cloudflare
       </p>
     </div>
   </body>
